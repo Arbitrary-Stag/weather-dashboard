@@ -1,11 +1,28 @@
+
+/* Root */
 :root {
     font-size: 62.5%;
     font-family: Arial, Helvetica, sans-serif;
 }  
 
+/* Pseudo classes */
+div > p {
+    display: block;
+}
+
 p {
+    margin-left: 1rem;
+    display: inline-block;
     font-size: 1.6rem;
     font-weight: bold;
+    line-height: 2;
+}
+
+span {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2;
 }
 
 h1 {
@@ -26,23 +43,10 @@ h3 {
     line-height: 1.5rem;
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, royalblue, rgb(24, 42, 70));
-    color: white;
-    line-height: 2;
-    font-weight: bold;
-}
-
-.aside {
-    display: flex;
-    flex-direction: column;
-    width: 38.5rem;
-    float: left;
-    margin: 1.5rem;
-    height: 80vh;
+form {
+    height: 3rem;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
 }
 
 input {
@@ -61,6 +65,7 @@ button {
     margin-bottom: 1.5rem;
     border: none;
     border-radius: .5rem;
+    width: 36.5rem;
 }
 
 button:hover {
@@ -70,11 +75,43 @@ button:hover {
     transition: ease-in 150ms;
 }
 
+/* Various classes */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, royalblue, rgb(24, 42, 70));
+    color: white;
+    line-height: 2;
+    font-weight: bold;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 36.5rem;
+    margin: 1rem auto;
+}
+
+.aside2 {
+    display: flex;
+    flex-direction: column;
+    width: 36.5rem;
+    float: left;
+    margin: 1rem;
+}
+
 .button2 {
     display: block;
     background-color: lightgrey;
     color: black;
-    width: 38.5rem;
+    width: 36.5rem;
 }
 
 .searchHistory {
@@ -82,20 +119,25 @@ button:hover {
     padding-top: 1.5rem;
 }
 
+.centerImg {
+    margin: 0 auto;
+}
+
 .main {
     display: flex;
     flex-direction: column;
-    width: 90rem;
+    width: 91rem;
     margin: 1.5rem;
     padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .weather {
-    /* display: flex;
-    flex-direction: column; */
+    margin-top: 2rem;
     line-height: 2;
     border: 1px solid black;
     padding: 1rem;
+    background-color:rgb(219, 225, 244)
 }
 
 .forecast {
@@ -113,4 +155,127 @@ button:hover {
     width: 16.57rem;
     height: 20rem;
     line-height: 2.2;
+    text-align: center;
 }
+
+.forecastHeader {
+    display: block;
+}
+
+.yellow {
+    color: rgb(249, 249, 188);
+}
+
+.clear {
+    display: block;
+    text-align: center;
+}
+
+/* ID's mostly to set things to a default display of none */
+#forecast {
+    display: none;
+}
+
+#main {
+    display: none;
+}
+
+#clear {
+    display: none;
+}
+
+#stateMenu {
+    display: none;
+}
+
+/* This will apply specific styling for smaller screens */
+@media screen and (max-width: 768px) {
+    aside, main, div, section { 
+      display: block;  
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    body {
+        min-width: 38rem;
+    }
+
+    aside {
+      width: 100%;
+      text-align: center;
+    }
+
+    img {
+        margin: auto;
+    }
+
+    .thumbnail {
+        display: block;
+        border: .1rem solid black;
+        padding: 2rem 1rem;
+        margin: 1rem auto;
+        background-color: rgb(24, 42, 70);
+        color: white;
+        width: 16.57rem;
+        height: 20rem;
+        line-height: 2.2;
+        align-self: center;
+    }
+
+    .main {
+        display: block;
+        flex-direction: column;
+        width: 100%;
+        margin: 1rem auto;
+        text-align: center;
+    }
+
+    .aside {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 1rem auto;
+    }
+    
+    .aside2 {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+    .forecastHeader {
+        display: block;
+        margin: 1rem auto;
+        text-align: center;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .button2 {
+        display: block;
+        background-color: lightgrey;
+        color: black;
+        width: 80% - 2rem;
+        margin: 1rem auto;
+    }
+    
+    .header {
+        display: block;
+        text-align: center;
+        background: linear-gradient(to right, royalblue, rgb(24, 42, 70));
+        color: white;
+        line-height: 2;
+        font-weight: bold;
+    }
+
+    .clear {
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+  }
